@@ -65,37 +65,37 @@ export function HomePage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center mix-blend-soft-light opacity-70"
+          className="absolute inset-0 bg-cover bg-center mix-blend-soft-light opacity-60"
           style={{ backgroundImage: 'url(/images/houston-skyline.jpg)' }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-green-600/40 to-green-800/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-green-600/50 to-green-800/70"></div>
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Houston's Premier
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-accent-500">
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 drop-shadow-2xl">
+              <span className="text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">Houston's Premier</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-accent-400 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] font-black">
                 Land Development Experts
               </span>
             </h1>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-200">
+            <p className="text-xl lg:text-2xl mb-8 text-white font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
               $483M+ in transactions • 15+ years experience • 523+ satisfied sellers
             </p>
-            <p className="text-lg mb-12 text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg mb-12 text-white/95 max-w-3xl mx-auto font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
               Whether you're selling land, finding development sites, or investing in Houston's growing market, 
               we provide the expertise and tools to maximize your success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:shadow-accent-400/30 transform hover:-translate-y-0.5 transition-all flex items-center justify-center border-2 border-accent-400/30 hover:border-accent-400/50"
+                className="bg-gradient-to-r from-accent-500 to-accent-600 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-accent-400/40 transform hover:-translate-y-1 transition-all flex items-center justify-center border-2 border-accent-400/50 hover:border-accent-300 drop-shadow-xl"
               >
                 Get Your Cash Offer <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link
                 to="/tools/roi-calculator"
-                className="bg-white/10 backdrop-blur-sm border-2 border-accent-400/40 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-500/20 hover:border-accent-400 hover:shadow-accent-400/20 hover:shadow-lg transition-all flex items-center justify-center"
+                className="bg-white/15 backdrop-blur-sm border-2 border-white/40 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-white/20 transition-all flex items-center justify-center drop-shadow-xl"
               >
                 Try ROI Calculator <Calculator className="ml-2 h-5 w-5" />
               </Link>
