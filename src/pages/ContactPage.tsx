@@ -649,7 +649,7 @@ export function ContactPage() {
               href="/sell-your-land"
               className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-all flex items-center justify-center"
             >
-              Get Cash Offer <Send className="ml-2 h-5 w-5" />
+              <span className="text-green-700">Get Cash</span> Offer <Send className="ml-2 h-5 w-5" />
             </a>
           </div>
         </div>

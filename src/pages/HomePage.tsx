@@ -91,7 +91,7 @@ export function HomePage() {
                 to="/contact"
                 className="bg-gradient-to-r from-accent-500 to-accent-600 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-accent-400/40 transform hover:-translate-y-1 transition-all flex items-center justify-center border-2 border-accent-400/50 hover:border-accent-300 drop-shadow-xl"
               >
-                Get Your Cash Offer <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="text-green-700">Get Your Cash</span> Offer <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link
                 to="/tools/roi-calculator"
@@ -206,7 +206,7 @@ export function HomePage() {
               to="/sell-your-land"
               className="bg-gradient-to-r from-green-800 to-green-900 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-green-900 hover:to-green-950 hover:shadow-lg hover:shadow-green-900/30 transition-all flex items-center justify-center border-2 border-green-600/30"
             >
-              Get Cash Offer Now <DollarSign className="ml-2 h-5 w-5" />
+              <span className="text-green-700">Get Cash</span> Offer Now <DollarSign className="ml-2 h-5 w-5" />
             </Link>
           </div>
         </div>
