@@ -101,6 +101,11 @@ export function HomePage() {
               </Link>
             </div>
           </div>
+          
+          {/* Floating elements for visual interest */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-accent-500/10 rounded-full blur-xl animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
+          <div className="absolute bottom-32 right-20 w-16 h-16 bg-green-400/10 rounded-full blur-lg animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
+          <div className="absolute top-1/2 right-10 w-12 h-12 bg-accent-400/10 rounded-full blur-md animate-bounce" style={{ animationDelay: '2s', animationDuration: '5s' }}></div>
         </div>
       </section>
 
@@ -175,44 +180,6 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Tools Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Professional Development Tools
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Access our suite of professional tools designed specifically for Houston land development and investment.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {tools.map((tool, index) => {
-              const IconComponent = tool.icon;
-              return (
-                <Link
-                  key={index}
-                  to={tool.link}
-                  className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:shadow-green-600/10 transition-all hover:-translate-y-1 group border border-gray-100 hover:border-green-200"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-700 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all shadow-lg">
-                    <IconComponent className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{tool.title}</h3>
-                  <p className="text-gray-600 text-sm">{tool.description}</p>
-                  <div className="mt-4 text-green-600 font-medium group-hover:text-green-700 transition-colors flex items-center">
-                    Try Now <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <ProcessSection />
 
       {/* Testimonials */}
       <TestimonialsSection />

@@ -168,6 +168,11 @@ export function FindDevelopmentSitesPage() {
               </a>
             </div>
           </div>
+          
+          {/* Floating elements for visual interest */}
+          <div className="absolute top-20 left-10 w-16 h-16 bg-accent-500/10 rounded-full blur-xl animate-bounce" style={{ animationDelay: '0s', animationDuration: '4s' }}></div>
+          <div className="absolute bottom-20 right-16 w-12 h-12 bg-green-400/10 rounded-full blur-lg animate-bounce" style={{ animationDelay: '1.5s', animationDuration: '3s' }}></div>
+          <div className="absolute top-1/3 right-8 w-10 h-10 bg-accent-400/10 rounded-full blur-md animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '5s' }}></div>
         </div>
       </section>
 

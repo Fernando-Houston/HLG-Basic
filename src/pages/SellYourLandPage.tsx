@@ -124,17 +124,23 @@ export function SellYourLandPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-700 via-green-600 to-green-700 text-white py-20">
+      <section className="relative bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-transparent"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30"
+          className="absolute inset-0 bg-cover bg-center mix-blend-soft-light opacity-70"
           style={{ backgroundImage: 'url(/images/vacant-land.jpg)' }}
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-green-700/40 to-green-900/60"></div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-6">
+              <span className="inline-block bg-accent-500 text-gray-900 px-4 py-1 rounded-full text-sm font-bold mb-4 shadow-lg">
+                FAST CASH OFFERS
+              </span>
+            </div>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               Sell Your Land
-              <span className="block text-green-200">Fast & Fair</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-500">Fast & Fair</span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8">
               Get a cash offer in 48 hours • Close in 7 days • No commissions
@@ -142,18 +148,23 @@ export function SellYourLandPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#cash-offer-form"
-                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all flex items-center justify-center"
+                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-50 hover:text-green-700 hover:shadow-lg hover:shadow-accent-400/20 transition-all flex items-center justify-center border-2 border-transparent hover:border-accent-300"
               >
                 Get Your Cash Offer <ArrowRight className="ml-2 h-5 w-5" />
               </a>
               <Link
                 to="/tools/roi-calculator"
-                className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-all flex items-center justify-center"
+                className="bg-gradient-to-r from-green-700 to-green-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-green-800 hover:to-green-900 hover:shadow-lg hover:shadow-green-800/30 transition-all flex items-center justify-center border-2 border-green-600/30"
               >
                 Calculate Value <Calculator className="ml-2 h-5 w-5" />
               </Link>
             </div>
           </div>
+          
+          {/* Floating elements for visual interest */}
+          <div className="absolute top-20 left-10 w-16 h-16 bg-accent-500/10 rounded-full blur-xl animate-bounce" style={{ animationDelay: '0s', animationDuration: '4s' }}></div>
+          <div className="absolute bottom-20 right-16 w-12 h-12 bg-green-400/10 rounded-full blur-lg animate-bounce" style={{ animationDelay: '1.5s', animationDuration: '3s' }}></div>
+          <div className="absolute top-1/3 right-8 w-10 h-10 bg-accent-400/10 rounded-full blur-md animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '5s' }}></div>
         </div>
       </section>
 
