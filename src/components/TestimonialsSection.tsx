@@ -3,28 +3,28 @@ import { Star, Quote } from 'lucide-react';
 export function TestimonialsSection() {
   const testimonials = [
     {
-      name: "Michael Thompson",
-      title: "Land Developer",
-      location: "Katy, TX",
+      name: "Sylvester S.",
+      title: "Religious Organization Leader",
+      location: "Houston, TX",
       rating: 5,
-      text: "Houston Land Guy found us the perfect 25-acre development site in Katy. Their market analysis was spot-on, and we closed in just 30 days. The ROI has exceeded our projections by 15%.",
-      project: "Katy Residential Development"
+      text: "Searching for land in Houston seemed like an overwhelming task. A good friend recommended Stephen Garza, said he was the best in the land development game. He went above and beyond in helping us find the perfect land for our new synagogue. Thank you Mr. Garza and the amazing Houston Land Guy team!",
+      project: "Synagogue Development Project"
     },
     {
-      name: "Sarah Rodriguez",
-      title: "Property Investor",
-      location: "Sugar Land, TX",
+      name: "David Cohen",
+      title: "Operations Director",
+      location: "Houston, TX",
       rating: 5,
-      text: "I inherited 15 acres and needed to sell quickly. Houston Land Guy's cash offer process was incredible - 48 hours to offer, 7 days to close. No hassle, no commissions, just results.",
-      project: "Family Land Sale"
+      text: "We needed to acquire adjacent properties to expand our manufacturing facility. Houston Land Guy's strategic approach and industry connections made what seemed impossible happen. They negotiated three separate land deals simultaneously and saved us over $200K compared to our initial budget. Their expertise in commercial zoning was invaluable.",
+      project: "Industrial Expansion Project"
     },
     {
-      name: "David Chen",
-      title: "Commercial Developer",
-      location: "The Woodlands, TX",
+      name: "Larry Weinstein",
+      title: "Medical Real Estate Investor",
+      location: "Spring, TX",
       rating: 5,
-      text: "Their Chapter 42 planning tool saved us months of research. The development timeline was accurate, and their network of professionals made the entire process seamless.",
-      project: "Commercial Complex Development"
+      text: "Houston Land Guy's expertise in healthcare real estate is unmatched. They guided us through the complex process of acquiring land for our medical campus, handling everything from soil studies to municipal approvals. Their proactive communication kept our project on schedule, and we broke ground two months ahead of plan.",
+      project: "Medical Campus Development"
     }
   ];
 

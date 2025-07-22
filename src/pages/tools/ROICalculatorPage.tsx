@@ -7,7 +7,7 @@ import { LoadingButton } from '../../components/LoadingSpinner';
 
 export function ROICalculatorPage() {
   usePageSEO(pageSEO.roiCalculator);
-  const { showToast } = useToast();
+  const { success, error } = useToast();
   const [inputs, setInputs] = useState({
     landCost: '',
     landAcres: '',
@@ -42,7 +42,7 @@ export function ROICalculatorPage() {
 
   const handleExportROI = async () => {
     if (!results) {
-      showToast('Please calculate ROI first', 'error');
+      error('Please calculate ROI first');
       return;
     }
 
@@ -60,7 +60,7 @@ export function ROICalculatorPage() {
       if (response.ok) {
         const filename = `ROI_Analysis_${new Date().toISOString().split('T')[0]}.pdf`;
         downloadFile(response, filename);
-        showToast('ROI analysis exported successfully!', 'success');
+        success('ROI analysis exported successfully!');
       } else {
         // If PDF generation fails, create a downloadable HTML version
         const htmlContent = generateROIHTML();
@@ -73,11 +73,11 @@ export function ROICalculatorPage() {
         a.click();
         window.URL.revokeObjectURL(url);
         document.body.removeChild(a);
-        showToast('Exported as HTML (PDF service temporarily unavailable)', 'info');
+        success('Exported as HTML (PDF service temporarily unavailable)');
       }
     } catch (error) {
       console.error('Export failed:', error);
-      showToast('Export failed. Please try again later.', 'error');
+      error('Export failed. Please try again later.');
     } finally {
       setIsExporting(false);
     }
@@ -478,11 +478,11 @@ export function ROICalculatorPage() {
               {results && (
                 <LoadingButton
                   onClick={handleExportROI}
-                  loading={isExporting}
+                  isLoading={isExporting}
                   disabled={isExporting}
-                  icon={Download}
                   className="px-4 py-2 bg-accent-100 text-accent-900 rounded-lg hover:bg-accent-200 hover:shadow-md hover:shadow-accent-200/50 transition-all font-medium"
                 >
+                  <Download className="h-4 w-4 mr-2" />
                   Export PDF
                 </LoadingButton>
               )}

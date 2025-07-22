@@ -8,7 +8,7 @@ import { FormField } from '../components/FormField';
 
 export function ContactPage() {
   usePageSEO(pageSEO.contact);
-  const { showToast } = useToast();
+  const { success, error } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -53,7 +53,7 @@ export function ContactPage() {
     e.preventDefault();
     
     if (!validateForm()) {
-      showToast('Please fix the errors in the form', 'error');
+      error('Please fix the errors in the form');
       return;
     }
     
@@ -73,7 +73,7 @@ export function ContactPage() {
       const response = await submitContactForm(contactData);
       
       if (response.success) {
-        showToast('Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
+        success('Thank you for your message! We\'ll get back to you within 24 hours.');
         setFormData({
           name: '',
           email: '',
@@ -85,10 +85,10 @@ export function ContactPage() {
         });
         setErrors({});
       } else {
-        showToast(response.error || 'Failed to send message. Please try again.', 'error');
+        error(response.error || 'Failed to send message. Please try again.');
       }
     } catch (error) {
-      showToast('An unexpected error occurred. Please try again later.', 'error');
+      error('An unexpected error occurred. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -350,11 +350,11 @@ export function ContactPage() {
                 
                 <LoadingButton
                   type="submit"
-                  loading={isSubmitting}
+                  isLoading={isSubmitting}
                   disabled={isSubmitting}
-                  icon={Send}
                   className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-all"
                 >
+                  <Send className="h-5 w-5 mr-2" />
                   Send Message
                 </LoadingButton>
                 
