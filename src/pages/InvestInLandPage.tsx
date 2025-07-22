@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { TrendingUp, Shield, Users, Target, DollarSign, FileText, Phone, Loader2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { TrendingUp, Shield, Users, Target, DollarSign, FileText, Phone, Loader2, X, CheckCircle, Clock, BarChart3, Handshake, Building2, User, Mail, Sparkles, Star } from 'lucide-react';
 import { submitInvestmentInquiry, InvestmentInquiryFormData } from '../utils/api';
 import { usePageSEO, pageSEO } from '../utils/seo';
 
@@ -17,6 +17,7 @@ export function InvestInLandPage() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [selectedInvestmentType, setSelectedInvestmentType] = useState<any>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,25 +79,77 @@ export function InvestInLandPage() {
       type: "Joint Ventures",
       minimum: "$500K+",
       description: "Partner with us on large development projects with shared equity and returns",
-      benefits: ["Shared risk and reward", "Active project involvement", "Higher return potential", "Development expertise included"]
+      benefits: ["Shared risk and reward", "Active project involvement", "Higher return potential", "Development expertise included"],
+      icon: Handshake,
+      detailDescription: "Joint ventures represent the highest level of partnership where you work directly with our development team as an equity partner. You'll have active involvement in major project decisions and share in both the risks and substantial rewards of large-scale Houston area developments.",
+      keyFeatures: [
+        "Direct equity participation in development projects",
+        "Active involvement in project decisions and strategy",
+        "Access to our development pipeline and expertise",
+        "Shared profits based on project performance",
+        "Typically 24-48 month investment horizons"
+      ],
+      riskProfile: "High risk, high reward - suitable for experienced investors",
+      expectedReturns: "25-40% IRR depending on project success",
+      investmentProcess: "Due diligence period, partnership agreement, project milestones, profit distributions",
+      idealFor: "Experienced investors seeking active involvement and maximum returns"
     },
     {
       type: "Preferred Equity",
       minimum: "$250K+",
       description: "Priority returns with lower risk profile for passive investors",
-      benefits: ["Priority distributions", "Passive investment", "Predictable returns", "Lower risk profile"]
+      benefits: ["Priority distributions", "Passive investment", "Predictable returns", "Lower risk profile"],
+      icon: Shield,
+      detailDescription: "Preferred equity positions offer priority returns ahead of common equity holders, providing a more stable investment with predictable cash flows. This passive investment structure is ideal for investors seeking steady returns without active involvement.",
+      keyFeatures: [
+        "Priority distributions before common equity",
+        "Fixed preferred return rate (typically 8-12%)",
+        "Passive investment requiring no active management",
+        "Quarterly or annual distribution schedules",
+        "Downside protection through priority position"
+      ],
+      riskProfile: "Moderate risk with downside protection",
+      expectedReturns: "12-18% IRR with preferred return guarantees",
+      investmentProcess: "Investment commitment, preferred equity documentation, regular distributions",
+      idealFor: "Investors seeking steady returns with lower risk tolerance"
     },
     {
       type: "Syndications",
       minimum: "$100K+",
       description: "Pool investments with other investors for diversified land portfolios",
-      benefits: ["Portfolio diversification", "Professional management", "Lower minimum investment", "Quarterly distributions"]
+      benefits: ["Portfolio diversification", "Professional management", "Lower minimum investment", "Quarterly distributions"],
+      icon: Users,
+      detailDescription: "Syndicated investments allow you to pool resources with other investors to access larger, more diversified development opportunities. Our professional management team handles all aspects while you receive regular distributions from a portfolio of properties.",
+      keyFeatures: [
+        "Diversified portfolio across multiple properties",
+        "Professional asset management included",
+        "Lower minimum investment thresholds",
+        "Regular quarterly distribution payments",
+        "Detailed performance reporting and updates"
+      ],
+      riskProfile: "Moderate risk through diversification",
+      expectedReturns: "15-22% IRR across diversified portfolio",
+      investmentProcess: "Syndication offering, investment commitment, ongoing management, distributions",
+      idealFor: "Investors wanting diversification with professional management"
     },
     {
       type: "Debt Investments",
       minimum: "$100K+",
       description: "Secure lending opportunities backed by Houston area land assets",
-      benefits: ["Fixed returns", "Asset-backed security", "Short-term options", "Regular interest payments"]
+      benefits: ["Fixed returns", "Asset-backed security", "Short-term options", "Regular interest payments"],
+      icon: Building2,
+      detailDescription: "Debt investments provide fixed-income opportunities secured by Houston area land assets. These investments offer predictable returns with asset-backed security, making them ideal for conservative investors seeking steady income with lower risk exposure.",
+      keyFeatures: [
+        "Fixed interest rates with predictable returns",
+        "Asset-backed security with land collateral",
+        "Shorter investment terms (12-36 months typically)",
+        "Monthly or quarterly interest payments",
+        "First lien position on valuable land assets"
+      ],
+      riskProfile: "Lower risk with asset-backed security",
+      expectedReturns: "8-14% annual returns with regular interest payments",
+      investmentProcess: "Loan documentation, asset evaluation, funding, regular interest payments",
+      idealFor: "Conservative investors seeking fixed income with asset security"
     }
   ];
 
@@ -260,7 +313,10 @@ export function InvestInLandPage() {
                     ))}
                   </ul>
                   
-                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3 rounded-lg font-semibold hover:from-green-700 hover:to-green-800 hover:shadow-lg hover:shadow-green-600/30 transform hover:-translate-y-0.5 transition-all group">
+                  <button 
+                    onClick={() => setSelectedInvestmentType(level)}
+                    className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3 rounded-lg font-semibold hover:from-green-700 hover:to-green-800 hover:shadow-lg hover:shadow-green-600/30 transform hover:-translate-y-0.5 transition-all group"
+                  >
                     <span className="flex items-center justify-center">
                       Learn More
                       <TrendingUp className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -273,240 +329,350 @@ export function InvestInLandPage() {
         </div>
       </section>
 
-      {/* Why Invest With Us */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Invest With Houston Land Guy?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our expertise, market knowledge, and proven systems provide investors with 
-              exceptional opportunities in the Houston land market.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {advantages.map((advantage, index) => {
-              const IconComponent = advantage.icon;
-              return (
-                <div key={index} className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center">
-                    <IconComponent className="h-8 w-8 text-white" />
+      {/* Investment Type Modal */}
+      {selectedInvestmentType && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="relative">
+              <div className="bg-gradient-to-r from-green-600 to-green-700 p-8 rounded-t-2xl text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-transparent"></div>
+                <div className="relative">
+                  <div className="flex items-center mb-4">
+                    {React.createElement(selectedInvestmentType.icon, { className: "h-10 w-10 mr-4" })}
+                    <div>
+                      <h3 className="text-3xl font-bold">{selectedInvestmentType.type}</h3>
+                      <p className="text-green-100 text-lg">Minimum Investment: {selectedInvestmentType.minimum}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{advantage.title}</h3>
-                  <p className="text-gray-600">{advantage.description}</p>
+                  <p className="text-xl text-green-100">{selectedInvestmentType.description}</p>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Investment Process */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Simple Investment Process
-            </h2>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  1
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Initial Consultation</h3>
-                <p className="text-gray-600 text-sm">Discuss your investment goals and risk tolerance</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  2
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Due Diligence</h3>
-                <p className="text-gray-600 text-sm">Review investment materials and property details</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  3
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Investment Commitment</h3>
-                <p className="text-gray-600 text-sm">Complete documentation and fund your investment</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  4
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Ongoing Updates</h3>
-                <p className="text-gray-600 text-sm">Regular progress reports and distribution payments</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Investment Form */}
-      <section id="investment-form" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Start Your Investment Journey
-              </h2>
-              <p className="text-xl text-gray-600">
-                Connect with our investment team to explore opportunities that match your goals.
-              </p>
-            </div>
-            
-            <form onSubmit={handleSubmit} className="bg-gray-50 rounded-2xl p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={investorForm.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="Your full name"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={investorForm.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="your@email.com"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={investorForm.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="(713) 828-3701"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Investment Level *
-                  </label>
-                  <select
-                    name="investmentLevel"
-                    value={investorForm.investmentLevel}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  >
-                    <option value="">Select investment level</option>
-                    <option value="100k-250k">$100K - $250K</option>
-                    <option value="250k-500k">$250K - $500K</option>
-                    <option value="500k-1m">$500K - $1M</option>
-                    <option value="1m+">$1M+</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Investment Experience
-                  </label>
-                  <select
-                    name="experience"
-                    value={investorForm.experience}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  >
-                    <option value="">Select experience level</option>
-                    <option value="beginner">New to real estate investing</option>
-                    <option value="some">Some real estate experience</option>
-                    <option value="experienced">Experienced investor</option>
-                    <option value="professional">Professional/Institutional</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Investment Timeline
-                  </label>
-                  <select
-                    name="timeline"
-                    value={investorForm.timeline}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  >
-                    <option value="">Select timeline</option>
-                    <option value="immediate">Ready to invest now</option>
-                    <option value="1-3 months">1-3 months</option>
-                    <option value="3-6 months">3-6 months</option>
-                    <option value="6+ months">6+ months</option>
-                    <option value="exploring">Just exploring</option>
-                  </select>
-                </div>
-                
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Investment Interests
-                  </label>
-                  <textarea
-                    name="interests"
-                    value={investorForm.interests}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="Tell us about your investment goals and interests..."
-                  ></textarea>
-                </div>
-              </div>
-              
-              {/* Status Messages */}
-              {submitStatus && (
-                <div className={`mt-6 p-4 rounded-lg ${submitStatus.type === 'success' ? 'bg-green-100 text-green-700 border border-green-200' : 'bg-red-100 text-red-700 border border-red-200'}`}>
-                  {submitStatus.message}
-                </div>
-              )}
-              
-              <div className="mt-8">
                 <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 rounded-lg font-semibold text-lg hover:from-green-700 hover:to-green-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  onClick={() => setSelectedInvestmentType(null)}
+                  className="absolute top-4 right-4 bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="animate-spin h-5 w-5 mr-2" />
-                      Submitting Request...
-                    </>
-                  ) : (
-                    'Connect with Investment Team'
-                  )}
+                  <X className="h-6 w-6 text-white" />
                 </button>
               </div>
               
-              <div className="mt-4 text-center text-sm text-gray-600">
-                <p>Accredited investors only. All investments subject to risk and due diligence review.</p>
+              <div className="p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Overview</h4>
+                    <p className="text-gray-700 mb-6">{selectedInvestmentType.detailDescription}</p>
+                    
+                    <div className="bg-gray-50 p-6 rounded-xl mb-6">
+                      <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
+                        <Target className="h-5 w-5 mr-2 text-green-600" />
+                        Ideal For
+                      </h5>
+                      <p className="text-gray-700">{selectedInvestmentType.idealFor}</p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-4">Key Features</h4>
+                    <ul className="space-y-3 mb-6">
+                      {selectedInvestmentType.keyFeatures.map((feature: string, idx: number) => (
+                        <li key={idx} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                  <div className="bg-green-50 border border-green-200 p-6 rounded-xl">
+                    <h5 className="font-semibold text-gray-900 mb-2 flex items-center">
+                      <BarChart3 className="h-5 w-5 mr-2 text-green-600" />
+                      Expected Returns
+                    </h5>
+                    <p className="text-gray-700">{selectedInvestmentType.expectedReturns}</p>
+                  </div>
+                  <div className="bg-blue-50 border border-blue-200 p-6 rounded-xl">
+                    <h5 className="font-semibold text-gray-900 mb-2 flex items-center">
+                      <Shield className="h-5 w-5 mr-2 text-blue-600" />
+                      Risk Profile
+                    </h5>
+                    <p className="text-gray-700">{selectedInvestmentType.riskProfile}</p>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50 p-6 rounded-xl mb-8">
+                  <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
+                    <Clock className="h-5 w-5 mr-2 text-green-600" />
+                    Investment Process
+                  </h5>
+                  <p className="text-gray-700">{selectedInvestmentType.investmentProcess}</p>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="#investment-form"
+                    onClick={() => setSelectedInvestmentType(null)}
+                    className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-3 rounded-lg font-semibold text-center hover:from-green-700 hover:to-green-800 transition-all flex items-center justify-center"
+                  >
+                    Get Started with This Investment <TrendingUp className="ml-2 h-5 w-5" />
+                  </a>
+                  <a
+                    href="tel:7138283701"
+                    className="bg-white border-2 border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold text-center hover:bg-green-50 transition-all flex items-center justify-center"
+                  >
+                    Discuss This Investment <Phone className="ml-2 h-5 w-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Investment Form */}
+      <section id="investment-form" className="py-20 bg-gradient-to-br from-amber-50 via-white to-green-50 relative overflow-hidden">
+        {/* Floating background elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-amber-400/10 to-amber-500/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '0s', animationDuration: '4s' }}></div>
+          <div className="absolute bottom-20 right-16 w-24 h-24 bg-gradient-to-br from-green-400/10 to-green-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1.5s', animationDuration: '3s' }}></div>
+          <div className="absolute top-1/3 right-8 w-16 h-16 bg-gradient-to-br from-amber-300/10 to-amber-400/10 rounded-full blur-lg animate-pulse" style={{ animationDelay: '0.5s', animationDuration: '5s' }}></div>
+          <div className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-green-300/10 to-green-400/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '6s' }}></div>
+          
+          {/* Decorative geometric shapes */}
+          <div className="absolute top-40 right-20 w-4 h-4 bg-amber-400/20 rotate-45 animate-bounce" style={{ animationDelay: '0.8s', animationDuration: '4s' }}></div>
+          <div className="absolute bottom-40 left-20 w-3 h-3 bg-green-400/20 rotate-12 animate-bounce" style={{ animationDelay: '1.2s', animationDuration: '3.5s' }}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full mb-6 shadow-lg shadow-amber-400/25">
+                <Star className="h-8 w-8 text-white" />
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Start Your 
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Investment Journey</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Connect with our investment team to explore opportunities that match your goals and build wealth through strategic land investments.
+              </p>
+            </div>
+            
+            {/* Progress indicator */}
+            <div className="mb-8">
+              <div className="flex items-center justify-center space-x-8 mb-4">
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full flex items-center justify-center text-white font-semibold text-sm shadow-lg">1</div>
+                  <span className="ml-2 text-sm font-medium text-gray-700">Investment Profile</span>
+                </div>
+                <div className="w-16 h-1 bg-gray-200 rounded-full">
+                  <div className="w-8 h-1 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full"></div>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-semibold text-sm">2</div>
+                  <span className="ml-2 text-sm font-medium text-gray-500">Contact Details</span>
+                </div>
+                <div className="w-16 h-1 bg-gray-200 rounded-full"></div>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-semibold text-sm">3</div>
+                  <span className="ml-2 text-sm font-medium text-gray-500">Get Connected</span>
+                </div>
+              </div>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-2xl shadow-gray-900/10 border border-white/50 relative">
+              {/* Subtle inner glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-green-500/5 rounded-3xl"></div>
+              
+              <div className="relative">
+                {/* Contact Information Section */}
+                <div className="mb-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                      <User className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">Contact Information</h3>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <User className="h-4 w-4 mr-2 text-blue-500" />
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={investorForm.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        placeholder="Your full name"
+                      />
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <Mail className="h-4 w-4 mr-2 text-red-500" />
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={investorForm.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <Phone className="h-4 w-4 mr-2 text-green-500" />
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={investorForm.phone}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        placeholder="(713) 828-3701"
+                      />
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <DollarSign className="h-4 w-4 mr-2 text-green-600" />
+                        Investment Level *
+                      </label>
+                      <div className="relative">
+                        <select
+                          name="investmentLevel"
+                          value={investorForm.investmentLevel}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        >
+                          <option value="">Select investment level</option>
+                          <option value="100k-250k">$100K - $250K</option>
+                          <option value="250k-500k">$250K - $500K</option>
+                          <option value="500k-1m">$500K - $1M</option>
+                          <option value="1m+">$1M+</option>
+                        </select>
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <BarChart3 className="h-4 w-4 mr-2 text-purple-500" />
+                        Investment Experience
+                      </label>
+                      <div className="relative">
+                        <select
+                          name="experience"
+                          value={investorForm.experience}
+                          onChange={handleChange}
+                          className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        >
+                          <option value="">Select experience level</option>
+                          <option value="beginner">New to real estate investing</option>
+                          <option value="some">Some real estate experience</option>
+                          <option value="experienced">Experienced investor</option>
+                          <option value="professional">Professional/Institutional</option>
+                        </select>
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                          <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <Clock className="h-4 w-4 mr-2 text-amber-500" />
+                        Investment Timeline
+                      </label>
+                      <div className="relative">
+                        <select
+                          name="timeline"
+                          value={investorForm.timeline}
+                          onChange={handleChange}
+                          className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        >
+                          <option value="">Select timeline</option>
+                          <option value="immediate">Ready to invest now</option>
+                          <option value="1-3 months">1-3 months</option>
+                          <option value="3-6 months">3-6 months</option>
+                          <option value="6+ months">6+ months</option>
+                          <option value="exploring">Just exploring</option>
+                        </select>
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                          <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="md:col-span-2 group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <FileText className="h-4 w-4 mr-2 text-indigo-500" />
+                        Investment Interests
+                      </label>
+                      <textarea
+                        name="interests"
+                        value={investorForm.interests}
+                        onChange={handleChange}
+                        rows={4}
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md resize-none"
+                        placeholder="Tell us about your investment goals and interests..."
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              
+                {/* Status Messages */}
+                {submitStatus && (
+                  <div className={`mt-8 p-6 rounded-2xl shadow-lg ${submitStatus.type === 'success' ? 'bg-gradient-to-r from-green-100 to-green-50 text-green-800 border-2 border-green-200' : 'bg-gradient-to-r from-red-100 to-red-50 text-red-800 border-2 border-red-200'}`}>
+                    <div className="flex items-center">
+                      {submitStatus.type === 'success' ? (
+                        <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+                      ) : (
+                        <X className="h-5 w-5 mr-2 text-red-600" />
+                      )}
+                      {submitStatus.message}
+                    </div>
+                  </div>
+                )}
+              
+                <div className="mt-10">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-500 hover:from-amber-600 hover:via-amber-700 hover:to-orange-600 text-white py-5 px-8 rounded-2xl font-bold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-2xl shadow-amber-500/25 hover:shadow-3xl hover:shadow-amber-500/40 hover:scale-[1.02] transform group relative overflow-hidden"
+                  >
+                    {/* Button shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                    
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="animate-spin h-6 w-6 mr-3" />
+                        <span>Submitting Request...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="h-6 w-6 mr-3 group-hover:animate-pulse" />
+                        <span>Connect with Investment Team</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              
+                <div className="mt-6 text-center text-sm text-gray-600">
+                  <p>Accredited investors only. All investments subject to risk and due diligence review.</p>
+                </div>
               </div>
             </form>
           </div>

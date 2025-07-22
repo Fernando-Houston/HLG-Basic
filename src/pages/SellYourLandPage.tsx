@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { DollarSign, Clock, CheckCircle, ArrowRight, Calculator, Phone, Mail, Loader2 } from 'lucide-react';
+import { DollarSign, Clock, CheckCircle, ArrowRight, Calculator, Phone, Mail, Loader2, User, MapPin, Home, FileText, Sparkles, Star, Calendar, X } from 'lucide-react';
 import { submitSellLandForm, SellLandFormData } from '../utils/api';
 import { usePageSEO, pageSEO } from '../utils/seo';
 
@@ -293,172 +293,280 @@ export function SellYourLandPage() {
       </section>
 
       {/* Cash Offer Form */}
-      <section id="cash-offer-form" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
+      <section id="cash-offer-form" className="py-20 bg-gradient-to-br from-amber-50 via-white to-green-50 relative overflow-hidden">
+        {/* Floating background elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-amber-400/10 to-amber-500/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '0s', animationDuration: '4s' }}></div>
+          <div className="absolute bottom-20 right-16 w-24 h-24 bg-gradient-to-br from-green-400/10 to-green-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1.5s', animationDuration: '3s' }}></div>
+          <div className="absolute top-1/3 right-8 w-16 h-16 bg-gradient-to-br from-amber-300/10 to-amber-400/10 rounded-full blur-lg animate-pulse" style={{ animationDelay: '0.5s', animationDuration: '5s' }}></div>
+          <div className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-green-300/10 to-green-400/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '6s' }}></div>
+          
+          {/* Decorative geometric shapes */}
+          <div className="absolute top-40 right-20 w-4 h-4 bg-amber-400/20 rotate-45 animate-bounce" style={{ animationDelay: '0.8s', animationDuration: '4s' }}></div>
+          <div className="absolute bottom-40 left-20 w-3 h-3 bg-green-400/20 rotate-12 animate-bounce" style={{ animationDelay: '1.2s', animationDuration: '3.5s' }}></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Get Your Cash Offer Today
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full mb-6 shadow-lg shadow-amber-400/25">
+                <Star className="h-8 w-8 text-white" />
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Get Your Cash Offer
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">Today</span>
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Fill out the form below and receive your no-obligation cash offer within 48 hours.
               </p>
             </div>
             
-            <form onSubmit={handleSubmit} className="bg-gray-50 rounded-2xl p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="Your full name"
-                  />
+            {/* Progress indicator */}
+            <div className="mb-8">
+              <div className="flex items-center justify-center space-x-8 mb-4">
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full flex items-center justify-center text-white font-semibold text-sm shadow-lg">1</div>
+                  <span className="ml-2 text-sm font-medium text-gray-700">Property Details</span>
                 </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="your@email.com"
-                  />
+                <div className="w-16 h-1 bg-gray-200 rounded-full">
+                  <div className="w-8 h-1 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full"></div>
                 </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="(713) 828-3701"
-                  />
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-semibold text-sm">2</div>
+                  <span className="ml-2 text-sm font-medium text-gray-500">Contact Info</span>
                 </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Property Type *
-                  </label>
-                  <select
-                    name="propertyType"
-                    value={formData.propertyType}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  >
-                    <option value="">Select property type</option>
-                    {propertyTypes.map(type => (
-                      <option key={type} value={type}>{type}</option>
-                    ))}
-                  </select>
-                </div>
-                
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Property Address *
-                  </label>
-                  <input
-                    type="text"
-                    name="propertyAddress"
-                    value={formData.propertyAddress}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="123 Main St, Houston, TX 77001"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Acreage/Size
-                  </label>
-                  <input
-                    type="text"
-                    name="acreage"
-                    value={formData.acreage}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="5 acres"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Desired Timeline
-                  </label>
-                  <select
-                    name="timeline"
-                    value={formData.timeline}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  >
-                    <option value="">Select timeline</option>
-                    <option value="ASAP">ASAP (within 30 days)</option>
-                    <option value="1-3 months">1-3 months</option>
-                    <option value="3-6 months">3-6 months</option>
-                    <option value="6+ months">6+ months</option>
-                    <option value="Just exploring">Just exploring options</option>
-                  </select>
-                </div>
-                
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Additional Information
-                  </label>
-                  <textarea
-                    name="additionalInfo"
-                    value={formData.additionalInfo}
-                    onChange={handleChange}
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="Tell us anything else about your property or situation..."
-                  ></textarea>
+                <div className="w-16 h-1 bg-gray-200 rounded-full"></div>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-semibold text-sm">3</div>
+                  <span className="ml-2 text-sm font-medium text-gray-500">Get Offer</span>
                 </div>
               </div>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-2xl shadow-gray-900/10 border border-white/50 relative">
+              {/* Subtle inner glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-green-500/5 rounded-3xl"></div>
               
-              {/* Status Messages */}
-              {submitStatus && (
-                <div className={`p-4 rounded-lg mb-6 ${submitStatus.type === 'success' ? 'bg-green-100 text-green-700 border border-green-200' : 'bg-red-100 text-red-700 border border-red-200'}`}>
-                  {submitStatus.message}
+              <div className="relative">
+                {/* Property Details Section */}
+                <div className="mb-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                      <Home className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">Property Information</h3>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <Home className="h-4 w-4 mr-2 text-blue-500" />
+                        Property Type *
+                      </label>
+                      <div className="relative">
+                        <select
+                          name="propertyType"
+                          value={formData.propertyType}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        >
+                          <option value="">Select property type</option>
+                          {propertyTypes.map(type => (
+                            <option key={type} value={type}>{type}</option>
+                          ))}
+                        </select>
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <MapPin className="h-4 w-4 mr-2 text-red-500" />
+                        Property Address *
+                      </label>
+                      <input
+                        type="text"
+                        name="propertyAddress"
+                        value={formData.propertyAddress}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        placeholder="123 Main St, Houston, TX 77001"
+                      />
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <DollarSign className="h-4 w-4 mr-2 text-green-500" />
+                        Acreage/Size
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="acreage"
+                          value={formData.acreage}
+                          onChange={handleChange}
+                          className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                          placeholder="5 acres"
+                        />
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm font-medium">
+                          acres
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <Calendar className="h-4 w-4 mr-2 text-purple-500" />
+                        Desired Timeline
+                      </label>
+                      <div className="relative">
+                        <select
+                          name="timeline"
+                          value={formData.timeline}
+                          onChange={handleChange}
+                          className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        >
+                          <option value="">Select timeline</option>
+                          <option value="ASAP">ASAP (within 30 days)</option>
+                          <option value="1-3 months">1-3 months</option>
+                          <option value="3-6 months">3-6 months</option>
+                          <option value="6+ months">6+ months</option>
+                          <option value="Just exploring">Just exploring options</option>
+                        </select>
+                        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                          <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              )}
-              
-              <div className="mt-8">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 rounded-lg font-semibold text-lg hover:from-green-700 hover:to-green-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="animate-spin h-5 w-5 mr-2" />
-                      Submitting Request...
-                    </>
-                  ) : (
-                    'Get My Cash Offer Now'
-                  )}
-                </button>
-              </div>
-              
-              <div className="mt-4 text-center text-sm text-gray-600">
-                <p>By submitting this form, you agree to our privacy policy. We'll never share your information.</p>
+                
+                {/* Contact Information Section */}
+                <div className="mt-10 pt-8 border-t border-gradient-to-r from-amber-200 via-gray-200 to-green-200">
+                  <div className="flex items-center mb-6">
+                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3 shadow-lg">
+                      <User className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">Contact Information</h3>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <User className="h-4 w-4 mr-2 text-blue-500" />
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        placeholder="Your full name"
+                      />
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <Mail className="h-4 w-4 mr-2 text-red-500" />
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <Phone className="h-4 w-4 mr-2 text-green-500" />
+                        Phone Number *
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md"
+                        placeholder="(713) 828-3701"
+                      />
+                    </div>
+                    
+                    <div className="group">
+                      <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
+                        <FileText className="h-4 w-4 mr-2 text-indigo-500" />
+                        Additional Information
+                      </label>
+                      <textarea
+                        name="additionalInfo"
+                        value={formData.additionalInfo}
+                        onChange={handleChange}
+                        rows={3}
+                        className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-200 bg-white/90 hover:border-amber-300 group-hover:shadow-md resize-none"
+                        placeholder="Tell us anything else about your property or situation..."
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Status Messages */}
+                {submitStatus && (
+                  <div className={`mt-8 p-6 rounded-2xl shadow-lg ${submitStatus.type === 'success' ? 'bg-gradient-to-r from-green-100 to-green-50 text-green-800 border-2 border-green-200' : 'bg-gradient-to-r from-red-100 to-red-50 text-red-800 border-2 border-red-200'}`}>
+                    <div className="flex items-center">
+                      {submitStatus.type === 'success' ? (
+                        <CheckCircle className="h-5 w-5 mr-2 text-green-600" />
+                      ) : (
+                        <X className="h-5 w-5 mr-2 text-red-600" />
+                      )}
+                      {submitStatus.message}
+                    </div>
+                  </div>
+                )}
+                
+                <div className="mt-10">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-orange-500 hover:from-amber-600 hover:via-amber-700 hover:to-orange-600 text-white py-5 px-8 rounded-2xl font-bold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-2xl shadow-amber-500/25 hover:shadow-3xl hover:shadow-amber-500/40 hover:scale-[1.02] transform group relative overflow-hidden"
+                  >
+                    {/* Button shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                    
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="animate-spin h-6 w-6 mr-3" />
+                        <span>Submitting Request...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="h-6 w-6 mr-3 group-hover:animate-pulse" />
+                        <span>Get My Cash Offer Now</span>
+                        <DollarSign className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
+                </div>
+                
+                <div className="mt-6 text-center">
+                  <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-50 to-amber-50 rounded-2xl border border-amber-200/50">
+                    <Clock className="h-5 w-5 mr-2 text-amber-600" />
+                    <p className="text-sm font-medium text-gray-700">
+                      By submitting this form, you agree to our privacy policy. We'll never share your information and you'll receive your cash offer within 
+                      <span className="text-amber-600 font-bold"> 48 hours</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </form>
           </div>
