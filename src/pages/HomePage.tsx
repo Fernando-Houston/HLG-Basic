@@ -64,12 +64,13 @@ export function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white">
-        <div className="absolute inset-0 bg-black/30"></div>
+      <section className="relative bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white">
+        <div className="absolute inset-0 bg-black/20"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay"
+          className="absolute inset-0 bg-cover bg-center mix-blend-soft-light opacity-70"
           style={{ backgroundImage: 'url(/images/houston-skyline.jpg)' }}
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-green-600/40 to-green-800/60"></div>
         <div className="relative container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">

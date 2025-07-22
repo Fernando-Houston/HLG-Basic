@@ -149,7 +149,7 @@ export function Header() {
           <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="bg-green-700 text-white px-4 xl:px-6 py-2 rounded-lg font-semibold hover:bg-green-800 transition-all"
+              className="bg-gradient-to-r from-accent-600 to-accent-700 text-white px-4 xl:px-6 py-2 rounded-lg font-semibold hover:from-accent-700 hover:to-accent-800 hover:shadow-lg hover:shadow-accent-600/30 transition-all"
             >
               Get Cash Offer
             </Link>
@@ -297,7 +297,7 @@ export function Header() {
                 <Link
                   to="/contact"
                   onClick={handleMobileLinkClick}
-                  className="block w-full bg-green-700 text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-green-800 transition-all"
+                  className="block w-full bg-gradient-to-r from-accent-600 to-accent-700 text-white px-6 py-3 rounded-lg font-semibold text-center hover:from-accent-700 hover:to-accent-800 transition-all"
                 >
                   Get Cash Offer
                 </Link>

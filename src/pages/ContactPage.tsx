@@ -105,9 +105,9 @@ export function ContactPage() {
     {
       icon: Phone,
       title: "Call Us",
-      value: "(713) 555-LAND",
+      value: "(713) 828-3701",
       description: "Speak directly with a land specialist",
-      action: "tel:7135550000",
+      action: "tel:7138283701",
       available: "Mon-Fri 8AM-6PM"
     },
     {
@@ -141,7 +141,7 @@ export function ContactPage() {
       name: "Houston Headquarters",
       address: "3302 Canal St",
       city: "Houston, TX 77003",
-      phone: "(713) 555-LAND",
+      phone: "(713) 828-3701",
       email: "houston@houstonlandguy.com",
       hours: {
         weekdays: "8:00 AM - 6:00 PM",
@@ -276,7 +276,7 @@ export function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-600"
-                      placeholder="(713) 555-0123"
+                      placeholder="(713) 828-3701"
                     />
                   </div>
                   
@@ -506,7 +506,7 @@ export function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:7135550000"
+              href="tel:7138283701"
               className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all flex items-center justify-center"
             >
               Call Now <Phone className="ml-2 h-5 w-5" />

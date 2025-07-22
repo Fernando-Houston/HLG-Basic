@@ -149,17 +149,18 @@ export function InvestInLandPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-600 to-blue-600 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-transparent"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30"
+          className="absolute inset-0 bg-cover bg-center mix-blend-soft-light opacity-70"
           style={{ backgroundImage: 'url(/images/investment-handshake.jpg)' }}
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-green-700/40 to-green-900/60"></div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               Invest in Houston
-              <span className="block text-green-200">Land Opportunities</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-500">Land Opportunities</span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8">
               18%+ average IRR • Proven track record • Expert guidance • Multiple investment levels
@@ -167,13 +168,13 @@ export function InvestInLandPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#investment-form"
-                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all flex items-center justify-center"
+                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-50 hover:text-green-700 hover:shadow-lg hover:shadow-accent-400/20 transition-all flex items-center justify-center border-2 border-transparent hover:border-accent-300"
               >
                 Start Investing <TrendingUp className="ml-2 h-5 w-5" />
               </a>
               <a
-                href="tel:7135550000"
-                className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-all flex items-center justify-center"
+                href="tel:7138283701"
+                className="bg-gradient-to-r from-green-700 to-green-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-green-800 hover:to-green-900 hover:shadow-lg hover:shadow-green-800/30 transition-all flex items-center justify-center border-2 border-green-600/30"
               >
                 Speak with Advisor <Phone className="ml-2 h-5 w-5" />
               </a>
@@ -196,13 +197,18 @@ export function InvestInLandPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {performanceMetrics.map((metric, index) => (
-              <div key={index} className="text-center p-6 bg-gray-50 rounded-xl">
-                <div className="text-4xl font-bold text-green-600 mb-2">{metric.value}</div>
-                <div className="text-lg font-semibold text-gray-900 mb-2">{metric.metric}</div>
-                <div className="text-sm text-gray-600">{metric.description}</div>
-              </div>
-            ))}
+            {performanceMetrics.map((metric, index) => {
+              const isHighlight = index === 0 || index === 3; // Highlight IRR and Total Returns
+              return (
+                <div key={index} className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-md hover:shadow-lg hover:shadow-green-600/10 transition-all group">
+                  <div className={`text-4xl font-bold mb-2 ${isHighlight ? 'text-transparent bg-clip-text bg-gradient-to-r from-accent-600 to-accent-700' : 'text-green-600'}`}>
+                    {metric.value}
+                  </div>
+                  <div className="text-lg font-semibold text-gray-900 mb-2">{metric.metric}</div>
+                  <div className="text-sm text-gray-600">{metric.description}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -221,13 +227,20 @@ export function InvestInLandPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {investmentLevels.map((level, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl hover:shadow-green-600/10 transition-all group border border-gray-100">
                 <div className="p-8">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900">{level.type}</h3>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">{level.type}</h3>
+                      {index < 2 && (
+                        <span className="inline-block bg-accent-500 text-gray-900 px-2 py-1 rounded-full text-xs font-bold mt-1 shadow-sm">
+                          {index === 0 ? 'HIGHEST ROI' : 'LOWER RISK'}
+                        </span>
+                      )}
+                    </div>
                     <div className="text-right">
                       <div className="text-sm text-gray-600">Minimum Investment</div>
-                      <div className="text-2xl font-bold text-green-600">{level.minimum}</div>
+                      <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-700">{level.minimum}</div>
                     </div>
                   </div>
                   
@@ -242,8 +255,11 @@ export function InvestInLandPage() {
                     ))}
                   </ul>
                   
-                  <button className="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-3 rounded-lg font-semibold hover:from-green-700 hover:to-blue-700 transition-all">
-                    Learn More
+                  <button className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3 rounded-lg font-semibold hover:from-green-700 hover:to-green-800 hover:shadow-lg hover:shadow-green-600/30 transform hover:-translate-y-0.5 transition-all group">
+                    <span className="flex items-center justify-center">
+                      Learn More
+                      <TrendingUp className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </button>
                 </div>
               </div>
@@ -270,7 +286,7 @@ export function InvestInLandPage() {
               const IconComponent = advantage.icon;
               return (
                 <div key={index} className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{advantage.title}</h3>
@@ -385,7 +401,7 @@ export function InvestInLandPage() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="(713) 555-0123"
+                    placeholder="(713) 828-3701"
                   />
                 </div>
                 
@@ -471,7 +487,7 @@ export function InvestInLandPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-4 rounded-lg font-semibold text-lg hover:from-green-700 hover:to-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 rounded-lg font-semibold text-lg hover:from-green-700 hover:to-green-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {isSubmitting ? (
                     <>
@@ -493,7 +509,7 @@ export function InvestInLandPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
             Ready to Build Wealth Through Land?
@@ -504,7 +520,7 @@ export function InvestInLandPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:7135550000"
+              href="tel:7138283701"
               className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all flex items-center justify-center"
             >
               Schedule Call <Phone className="ml-2 h-5 w-5" />

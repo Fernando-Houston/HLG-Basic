@@ -32,25 +32,25 @@ export function AboutPage() {
 
   const team = [
     {
-      name: "Michael Johnson",
+      name: "Stephen Garza",
       title: "Founder & CEO",
       experience: "20+ years in Houston real estate",
-      image: "/images/professional-team.png",
-      bio: "Michael founded Houston Land Guy with a vision to streamline land transactions in the Greater Houston area. His deep market knowledge and developer relationships have facilitated over $483M in transactions."
+      image: "/images/stephen-garza.jpg",
+      bio: "Stephen founded Houston Land Guy with a vision to streamline land transactions in the Greater Houston area. His deep market knowledge and developer relationships have facilitated over $483M in transactions."
     },
     {
-      name: "Sarah Martinez",
-      title: "VP of Development",
-      experience: "15+ years in land development",
-      image: "/images/professional-team.png",
-      bio: "Sarah leads our development analysis team, ensuring every opportunity is thoroughly vetted. Her expertise in Houston's Chapter 42 regulations is unmatched in the industry."
+      name: "Stephen Garza",
+      title: "Chief Technology Officer",
+      experience: "15+ years in real estate technology",
+      image: "/images/stephen-garza.jpg",
+      bio: "Stephen leads our technology innovation team, developing cutting-edge tools for land analysis and transaction management. His expertise in PropTech has revolutionized how we evaluate opportunities."
     },
     {
-      name: "David Chen",
-      title: "Investment Director",
-      experience: "12+ years in real estate investment",
-      image: "/images/professional-team.png",
-      bio: "David manages our investor relations and identifies high-yield opportunities. His analytical approach has helped investors achieve consistent 18%+ returns."
+      name: "Stephen Garza",
+      title: "Chief Financial Officer",
+      experience: "18+ years in real estate finance",
+      image: "/images/stephen-garza.jpg",
+      bio: "Stephen oversees all financial operations and investment strategies at Houston Land Guy. His analytical approach to market valuation has helped investors achieve consistent returns exceeding industry standards."
     }
   ];
 

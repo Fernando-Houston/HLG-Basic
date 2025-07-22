@@ -124,8 +124,8 @@ export function SellYourLandPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-600 to-blue-600 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-green-700 via-green-600 to-green-700 text-white py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-transparent"></div>
         <div 
           className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30"
           style={{ backgroundImage: 'url(/images/vacant-land.jpg)' }}
@@ -175,7 +175,7 @@ export function SellYourLandPage() {
               const IconComponent = benefit.icon;
               return (
                 <div key={index} className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center shadow-lg">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{benefit.title}</h3>
@@ -236,7 +236,7 @@ export function SellYourLandPage() {
               </div>
 
               {/* Cash Sale */}
-              <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 shadow-lg border-2 border-green-200">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg border-2 border-green-200">
                 <h3 className="text-2xl font-bold text-green-600 mb-6 text-center">Cash Sale with Us</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-2 border-b">
@@ -337,7 +337,7 @@ export function SellYourLandPage() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                    placeholder="(713) 555-0123"
+                    placeholder="(713) 828-3701"
                   />
                 </div>
                 
@@ -433,7 +433,7 @@ export function SellYourLandPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-4 rounded-lg font-semibold text-lg hover:from-green-700 hover:to-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 rounded-lg font-semibold text-lg hover:from-green-700 hover:to-green-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                 >
                   {isSubmitting ? (
                     <>
@@ -468,12 +468,12 @@ export function SellYourLandPage() {
           
           <div className="flex flex-col md:flex-row gap-8 justify-center">
             <a
-              href="tel:7135550000"
+              href="tel:7138283701"
               className="flex items-center justify-center space-x-3 bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow group"
             >
               <Phone className="h-8 w-8 text-green-600 group-hover:scale-110 transition-transform" />
               <div>
-                <div className="text-lg font-semibold text-gray-900">(713) 555-LAND</div>
+                <div className="text-lg font-semibold text-gray-900">(713) 828-3701</div>
                 <div className="text-sm text-gray-600">Call for immediate assistance</div>
               </div>
             </a>

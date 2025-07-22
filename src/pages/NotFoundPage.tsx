@@ -96,8 +96,8 @@ export function NotFoundPage() {
             </p>
             <p className="font-semibold text-gray-900">
               Call us at{' '}
-              <a href="tel:+17135551234" className="text-green-600 hover:underline">
-                (713) 555-1234
+              <a href="tel:+17138283701" className="text-green-600 hover:underline">
+                (713) 828-3701
               </a>
             </p>
           </div>

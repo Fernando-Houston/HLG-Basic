@@ -92,7 +92,7 @@ export function SmartLandFinderPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-16">
+      <section className="bg-gradient-to-r from-purple-600 to-green-700 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center mb-6">
@@ -264,7 +264,7 @@ export function SmartLandFinderPage() {
                 <button
                   onClick={analyzeOpportunities}
                   disabled={isAnalyzing}
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-blue-700 transition-all flex items-center justify-center disabled:opacity-50"
+                  className="w-full bg-gradient-to-r from-purple-600 to-green-700 text-white py-4 rounded-lg font-semibold text-lg hover:from-purple-700 hover:to-green-800 transition-all flex items-center justify-center disabled:opacity-50"
                 >
                   {isAnalyzing ? (
                     <>
@@ -441,7 +441,7 @@ export function SmartLandFinderPage() {
                           <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
                             View Details
                           </button>
-                          <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all">
+                          <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-green-700 text-white rounded-lg hover:from-purple-700 hover:to-green-800 transition-all">
                             Get More Info
                           </button>
                         </div>

@@ -211,8 +211,8 @@ export function PrivacyPolicyPage() {
               </p>
               <p>
                 <strong>Phone:</strong>{' '}
-                <a href="tel:+17135551234" className="underline">
-                  (713) 555-1234
+                <a href="tel:+17138283701" className="underline">
+                  (713) 828-3701
                 </a>
               </p>
               <p>

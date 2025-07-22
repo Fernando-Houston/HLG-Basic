@@ -576,7 +576,7 @@ export function TimelineToolPage() {
                 {/* Progress Line */}
                 <div className="absolute top-5 left-0 right-0 h-1 bg-gray-300 -z-10">
                   <div 
-                    className="h-full bg-gradient-to-r from-green-500 to-blue-500 transition-all duration-500"
+                    className="h-full bg-gradient-to-r from-green-500 to-green-700 transition-all duration-500"
                     style={{ width: `${(selectedPhase / (timeline.phases.length - 1)) * 100}%` }}
                   ></div>
                 </div>
@@ -669,7 +669,7 @@ export function TimelineToolPage() {
                   </div>
                   <div className="mt-2 bg-gray-200 rounded-full h-2">
                     <div 
-                      className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all"
+                      className="bg-gradient-to-r from-green-500 to-green-700 h-2 rounded-full transition-all"
                       style={{ width: `${((selectedPhase + 1) / timeline.phases.length) * 100}%` }}
                     ></div>
                   </div>

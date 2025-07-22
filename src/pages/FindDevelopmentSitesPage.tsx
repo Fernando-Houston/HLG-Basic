@@ -137,17 +137,18 @@ export function FindDevelopmentSitesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-600 to-green-700 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-transparent"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30"
+          className="absolute inset-0 bg-cover bg-center mix-blend-soft-light opacity-70"
           style={{ backgroundImage: 'url(/images/land-development.jpg)' }}
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-green-600/30 to-green-800/50"></div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               Find Premium
-              <span className="block text-green-200">Development Sites</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-500">Development Sites</span>
             </h1>
             <p className="text-xl lg:text-2xl mb-8">
               Access 500+ exclusive off-market listings • Complete due diligence • $500K to $25M+ deals
@@ -155,12 +156,12 @@ export function FindDevelopmentSitesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#search-form"
-                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all flex items-center justify-center"
+                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-50 hover:text-green-700 hover:shadow-lg hover:shadow-accent-400/20 transition-all flex items-center justify-center border-2 border-transparent hover:border-accent-300"
               >
                 Find Development Sites <Search className="ml-2 h-5 w-5" />
               </a>
               <a
-                href="tel:7135550000"
+                href="tel:7138283701"
                 className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-all flex items-center justify-center"
               >
                 Speak with Expert <Clock className="ml-2 h-5 w-5" />
@@ -408,7 +409,7 @@ export function FindDevelopmentSitesPage() {
                       value={searchForm.contactPhone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-600"
-                      placeholder="(713) 555-0123"
+                      placeholder="(713) 828-3701"
                     />
                   </div>
                   
@@ -502,10 +503,10 @@ export function FindDevelopmentSitesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:7135550000"
+              href="tel:7138283701"
               className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all flex items-center justify-center"
             >
-              Call (713) 555-LAND <Phone className="ml-2 h-5 w-5" />
+              Call (713) 828-3701 <Phone className="ml-2 h-5 w-5" />
             </a>
             <a
               href="#search-form"
