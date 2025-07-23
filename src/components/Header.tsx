@@ -87,16 +87,16 @@ export function Header() {
               </button>
               {isToolsOpen && (
                 <div className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-md py-2 border mt-1">
-                  <Link to="/tools/roi-calculator" className="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
+                  <Link to="/tools/roi-calculator" className="block px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
                     ROI Calculator
                   </Link>
-                  <Link to="/tools/timeline" className="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
+                  <Link to="/tools/timeline" className="block px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
                     Development Timeline
                   </Link>
-                  <Link to="/tools/chapter-42" className="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
+                  <Link to="/tools/chapter-42" className="block px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
                     Chapter 42 Planning Tool
                   </Link>
-                  <Link to="/tools/smart-finder" className="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
+                  <Link to="/tools/smart-finder" className="block px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors">
                     Smart Land Finder
                   </Link>
                 </div>
@@ -118,7 +118,7 @@ export function Header() {
                     <Link
                       key={city}
                       to={`/locations/${city.toLowerCase().replace(' ', '-')}`}
-                      className="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
+                      className="block px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
                     >
                       {city}
                     </Link>
@@ -158,7 +158,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-md text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-all"
+            className="lg:hidden p-3 rounded-md text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-all min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -172,7 +172,7 @@ export function Header() {
               <Link 
                 to="/" 
                 onClick={handleMobileLinkClick}
-                className={`px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors ${
+                className={`px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors min-h-[44px] flex items-center ${
                   isActive('/') ? 'bg-green-50 text-green-600 font-medium' : ''
                 }`}
               >
@@ -181,7 +181,7 @@ export function Header() {
               <Link 
                 to="/sell-your-land" 
                 onClick={handleMobileLinkClick}
-                className={`px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors ${
+                className={`px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors ${
                   isActive('/sell-your-land') ? 'bg-green-50 text-green-600 font-medium' : ''
                 }`}
               >
@@ -190,7 +190,7 @@ export function Header() {
               <Link 
                 to="/find-development-sites" 
                 onClick={handleMobileLinkClick}
-                className={`px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors ${
+                className={`px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors ${
                   isActive('/find-development-sites') ? 'bg-green-50 text-green-600 font-medium' : ''
                 }`}
               >
@@ -199,7 +199,7 @@ export function Header() {
               <Link 
                 to="/invest-in-land" 
                 onClick={handleMobileLinkClick}
-                className={`px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors ${
+                className={`px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors ${
                   isActive('/invest-in-land') ? 'bg-green-50 text-green-600 font-medium' : ''
                 }`}
               >
@@ -210,7 +210,7 @@ export function Header() {
               <div className="border-t border-gray-100">
                 <button
                   onClick={() => setIsMobileToolsOpen(!isMobileToolsOpen)}
-                  className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
+                  className="flex items-center justify-between w-full px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
                 >
                   <span className="font-medium">Tools</span>
                   <ChevronDown className={`h-5 w-5 transition-transform ${isMobileToolsOpen ? 'rotate-180' : ''}`} />
@@ -253,7 +253,7 @@ export function Header() {
               <div className="border-t border-gray-100">
                 <button
                   onClick={() => setIsMobileLocationsOpen(!isMobileLocationsOpen)}
-                  className="flex items-center justify-between w-full px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
+                  className="flex items-center justify-between w-full px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
                 >
                   <span className="font-medium">Locations</span>
                   <ChevronDown className={`h-5 w-5 transition-transform ${isMobileLocationsOpen ? 'rotate-180' : ''}`} />
@@ -277,7 +277,7 @@ export function Header() {
               <Link 
                 to="/about" 
                 onClick={handleMobileLinkClick}
-                className={`px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors border-t border-gray-100 ${
+                className={`px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors border-t border-gray-100 ${
                   isActive('/about') ? 'bg-green-50 text-green-600 font-medium' : ''
                 }`}
               >
@@ -286,7 +286,7 @@ export function Header() {
               <Link 
                 to="/contact" 
                 onClick={handleMobileLinkClick}
-                className={`px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors ${
+                className={`px-4 py-4 text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors ${
                   isActive('/contact') ? 'bg-green-50 text-green-600 font-medium' : ''
                 }`}
               >

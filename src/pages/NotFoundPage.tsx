@@ -34,7 +34,7 @@ export function NotFoundPage() {
             <h1 className="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-700 mb-4">
               404
             </h1>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">
               Page Not Found
             </h2>
             <p className="text-xl text-gray-600 mb-8">
@@ -72,7 +72,7 @@ export function NotFoundPage() {
                   <Link
                     key={index}
                     to={suggestion.link}
-                    className="group p-6 bg-gray-50 rounded-lg hover:bg-gradient-to-r hover:from-blue-50 hover:to-green-50 transition-all"
+                    className="group p-6 bg-gray-50 rounded-lg hover:bg-gradient-to-r hover:from-amber-50 hover:to-green-50 transition-all"
                   >
                     <div className="w-12 h-12 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                       <IconComponent className="h-6 w-6 text-white" />

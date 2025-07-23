@@ -299,7 +299,7 @@ export function Chapter42ToolPage() {
 
             {/* Main Form */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Site Parameters</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-6">Site Parameters</h2>
               
               <div className="space-y-6">
                 {/* Basic Parameters */}
@@ -500,7 +500,7 @@ export function Chapter42ToolPage() {
                     <button
                       onClick={optimizeLayout}
                       disabled={isOptimizing}
-                      className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-all flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isOptimizing ? (
                         <>
@@ -524,7 +524,7 @@ export function Chapter42ToolPage() {
             {/* Site Plan Visualization */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">Site Plan Visualization</h2>
+                <h2 className="text-xl font-bold text-gray-900">Site Plan Visualization</h2>
                 {analysis && (
                   <button 
                     onClick={handleExport}
@@ -552,7 +552,7 @@ export function Chapter42ToolPage() {
             {/* Compliance Analysis */}
             {analysis && (
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Compliance Analysis</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-6">Compliance Analysis</h2>
                 
                 <div className="space-y-6">
                   {/* Overall Status */}
@@ -586,30 +586,30 @@ export function Chapter42ToolPage() {
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       <div className="bg-gray-50 rounded-lg p-4">
                         <div className="text-sm text-gray-600">Total Lots</div>
-                        <div className="text-2xl font-bold text-gray-900">{sitePlan.statistics.totalLots}</div>
+                        <div className="text-xl font-bold text-gray-900">{sitePlan.statistics.totalLots}</div>
                       </div>
                       <div className="bg-gray-50 rounded-lg p-4">
                         <div className="text-sm text-gray-600">Density</div>
-                        <div className="text-2xl font-bold text-gray-900">{sitePlan.statistics.density.toFixed(1)}</div>
+                        <div className="text-xl font-bold text-gray-900">{sitePlan.statistics.density.toFixed(1)}</div>
                         <div className="text-xs text-gray-500">units/acre</div>
                       </div>
                       <div className="bg-gray-50 rounded-lg p-4">
                         <div className="text-sm text-gray-600">Avg Lot Size</div>
-                        <div className="text-2xl font-bold text-gray-900">{formatNumber(sitePlan.statistics.avgLotSize)}</div>
+                        <div className="text-xl font-bold text-gray-900">{formatNumber(sitePlan.statistics.avgLotSize)}</div>
                         <div className="text-xs text-gray-500">sq ft</div>
                       </div>
                       <div className="bg-gray-50 rounded-lg p-4">
                         <div className="text-sm text-gray-600">Coverage</div>
-                        <div className="text-2xl font-bold text-gray-900">{sitePlan.statistics.coverage.toFixed(0)}%</div>
+                        <div className="text-xl font-bold text-gray-900">{sitePlan.statistics.coverage.toFixed(0)}%</div>
                       </div>
                       <div className="bg-gray-50 rounded-lg p-4">
                         <div className="text-sm text-gray-600">Open Space</div>
-                        <div className="text-2xl font-bold text-gray-900">{formatNumber(sitePlan.statistics.openSpaceArea)}</div>
+                        <div className="text-xl font-bold text-gray-900">{formatNumber(sitePlan.statistics.openSpaceArea)}</div>
                         <div className="text-xs text-gray-500">sq ft</div>
                       </div>
                       <div className="bg-gray-50 rounded-lg p-4">
                         <div className="text-sm text-gray-600">Efficiency</div>
-                        <div className="text-2xl font-bold text-gray-900">{sitePlan.statistics.efficiency.toFixed(0)}%</div>
+                        <div className="text-xl font-bold text-gray-900">{sitePlan.statistics.efficiency.toFixed(0)}%</div>
                       </div>
                     </div>
                   )}
@@ -648,8 +648,8 @@ export function Chapter42ToolPage() {
                   </div>
                   
                   {/* Optimization Recommendations */}
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                    <h3 className="text-lg font-semibold text-blue-900 mb-4">Optimization Recommendations</h3>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-amber-900 mb-4">Optimization Recommendations</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-700">Recommended Units:</span>

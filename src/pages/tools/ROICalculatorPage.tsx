@@ -294,7 +294,7 @@ export function ROICalculatorPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Form */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Project Details</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-6">Project Details</h2>
             
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -474,7 +474,7 @@ export function ROICalculatorPage() {
           {/* Results */}
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Analysis Results</h2>
+              <h2 className="text-xl font-bold text-gray-900">Analysis Results</h2>
               {results && (
                 <LoadingButton
                   onClick={handleExportROI}
@@ -504,7 +504,7 @@ export function ROICalculatorPage() {
                       </div>
                       <span className="text-sm font-medium text-green-800">ROI</span>
                     </div>
-                    <div className="text-2xl font-bold text-green-700">{formatPercent(results.roi)}</div>
+                    <div className="text-xl font-bold text-green-700">{formatPercent(results.roi)}</div>
                   </div>
                   
                   <div className="bg-gradient-to-br from-accent-50 to-accent-100 border border-accent-300 rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow">
@@ -514,7 +514,7 @@ export function ROICalculatorPage() {
                       </div>
                       <span className="text-sm font-medium text-accent-900">Gross Profit</span>
                     </div>
-                    <div className="text-2xl font-bold text-accent-700">{formatCurrency(results.grossProfit)}</div>
+                    <div className="text-xl font-bold text-accent-700">{formatCurrency(results.grossProfit)}</div>
                   </div>
                 </div>
                 

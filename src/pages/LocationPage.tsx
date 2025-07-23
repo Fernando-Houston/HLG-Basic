@@ -179,21 +179,21 @@ export function LocationPage() {
               </div>
               
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
                   <Users className="h-8 w-8 text-green-600 mb-3" />
-                  <div className="text-2xl font-bold text-green-600 mb-1">{currentLocation.population}</div>
-                  <div className="text-sm text-blue-800">Population</div>
+                  <div className="text-xl font-bold text-green-600 mb-1">{currentLocation.population}</div>
+                  <div className="text-sm text-amber-800">Population</div>
                 </div>
                 
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                   <Home className="h-8 w-8 text-green-600 mb-3" />
-                  <div className="text-2xl font-bold text-green-600 mb-1">{currentLocation.medianHome}</div>
+                  <div className="text-xl font-bold text-green-600 mb-1">{currentLocation.medianHome}</div>
                   <div className="text-sm text-green-800">Median Home Price</div>
                 </div>
                 
                 <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
                   <TrendingUp className="h-8 w-8 text-purple-600 mb-3" />
-                  <div className="text-2xl font-bold text-purple-600 mb-1">{currentLocation.growthRate}</div>
+                  <div className="text-xl font-bold text-purple-600 mb-1">{currentLocation.growthRate}</div>
                   <div className="text-sm text-purple-800">Annual Growth</div>
                 </div>
                 
@@ -235,32 +235,32 @@ export function LocationPage() {
             
             {/* Market Statistics */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">
                 {cityName} Development Metrics
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
                   <DollarSign className="h-8 w-8 text-green-600 mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-gray-900 mb-1">{currentLocation.marketStats.averageLandPrice}</div>
+                  <div className="text-xl font-bold text-gray-900 mb-1">{currentLocation.marketStats.averageLandPrice}</div>
                   <div className="text-sm text-gray-600">Avg Land Price/Acre</div>
                 </div>
                 
                 <div className="text-center">
                   <Building className="h-8 w-8 text-green-600 mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-gray-900 mb-1">{currentLocation.marketStats.developmentCosts}</div>
+                  <div className="text-xl font-bold text-gray-900 mb-1">{currentLocation.marketStats.developmentCosts}</div>
                   <div className="text-sm text-gray-600">Development Cost/SqFt</div>
                 </div>
                 
                 <div className="text-center">
                   <TrendingUp className="h-8 w-8 text-green-600 mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-gray-900 mb-1">{currentLocation.marketStats.expectedROI}</div>
+                  <div className="text-xl font-bold text-gray-900 mb-1">{currentLocation.marketStats.expectedROI}</div>
                   <div className="text-sm text-gray-600">Expected ROI</div>
                 </div>
                 
                 <div className="text-center">
                   <MapPin className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-                  <div className="text-2xl font-bold text-gray-900 mb-1">{currentLocation.marketStats.timeToMarket}</div>
+                  <div className="text-xl font-bold text-gray-900 mb-1">{currentLocation.marketStats.timeToMarket}</div>
                   <div className="text-sm text-gray-600">Time to Market</div>
                 </div>
               </div>

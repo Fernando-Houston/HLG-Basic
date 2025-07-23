@@ -87,7 +87,7 @@ export function TermsOfServicePage() {
                 <Scale className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">Terms of Service</h1>
+                <h1 className="text-xl font-bold text-gray-900">Terms of Service</h1>
                 <p className="text-gray-600">Last updated: January 2025</p>
               </div>
             </div>
@@ -108,7 +108,7 @@ export function TermsOfServicePage() {
                   <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
                     <IconComponent className="h-6 w-6 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900">{section.title}</h2>
+                  <h2 className="text-xl font-bold text-gray-900">{section.title}</h2>
                 </div>
                 <div className="space-y-3">
                   {section.content.map((item, itemIndex) => (
@@ -127,7 +127,7 @@ export function TermsOfServicePage() {
               <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center mr-4">
                 <Ban className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Prohibited Uses</h2>
+              <h2 className="text-xl font-bold text-gray-900">Prohibited Uses</h2>
             </div>
             <p className="text-gray-700 mb-4">
               You agree not to use our services for any of the following purposes:
@@ -148,7 +148,7 @@ export function TermsOfServicePage() {
               <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
                 <Shield className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Indemnification</h2>
+              <h2 className="text-xl font-bold text-gray-900">Indemnification</h2>
             </div>
             <p className="text-gray-600 leading-relaxed">
               You agree to indemnify, defend, and hold harmless Houston Land Guy, its officers, 
@@ -164,7 +164,7 @@ export function TermsOfServicePage() {
               <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
                 <Clock className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Termination</h2>
+              <h2 className="text-xl font-bold text-gray-900">Termination</h2>
             </div>
             <div className="space-y-3 text-gray-600">
               <p>
@@ -188,7 +188,7 @@ export function TermsOfServicePage() {
               <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
                 <Scale className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Governing Law</h2>
+              <h2 className="text-xl font-bold text-gray-900">Governing Law</h2>
             </div>
             <div className="space-y-3 text-gray-600">
               <p>
@@ -213,7 +213,7 @@ export function TermsOfServicePage() {
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
                 <Mail className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold">Questions About Terms</h2>
+              <h2 className="text-xl font-bold">Questions About Terms</h2>
             </div>
             <p className="mb-4">
               If you have any questions about these Terms of Service, please contact us:
@@ -238,8 +238,8 @@ export function TermsOfServicePage() {
           </div>
 
           {/* Agreement Notice */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-            <p className="text-blue-800 text-sm">
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+            <p className="text-amber-800 text-sm">
               <strong>Important:</strong> By using Houston Land Guy's services, you acknowledge 
               that you have read, understood, and agree to be bound by these Terms of Service. 
               If you do not agree to these terms, you must not use our services.

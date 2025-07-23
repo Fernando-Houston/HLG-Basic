@@ -60,7 +60,7 @@ export function QuickCalculator() {
         {result && (
           <div className="bg-white rounded-lg p-4 border border-green-300">
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-600 mb-1">
+              <div className="text-xl font-bold text-green-600 mb-1">
                 {result.units} Maximum Units
               </div>
               <div className="text-sm text-gray-600">

@@ -257,57 +257,25 @@ export function ContactPage() {
         <div className="container mx-auto px-4 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl shadow-gray-900/10 border border-white/50 p-8 lg:p-10 relative">
-              {/* Subtle inner glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-green-500/5 rounded-3xl"></div>
+            <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-10">
+              <div className="text-center mb-8">
+                <h2 className="text-xl font-bold text-gray-900 mb-2">
+                  Send us a Message
+                </h2>
+                <p className="text-gray-600">
+                  Get expert guidance on your land opportunities
+                </p>
+              </div>
               
-              <div className="relative">
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full mb-4 shadow-lg shadow-amber-400/25">
-                    <Star className="h-8 w-8 text-white" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                    Send us a Message
-                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600 text-xl">Get Expert Guidance</span>
-                  </h2>
-                </div>
-                
-                {/* Progress indicator */}
-                <div className="mb-8">
-                  <div className="flex items-center justify-center space-x-8 mb-4">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full flex items-center justify-center text-white font-semibold text-sm shadow-lg">1</div>
-                      <span className="ml-2 text-sm font-medium text-gray-700">Contact Info</span>
-                    </div>
-                    <div className="w-16 h-1 bg-gray-200 rounded-full">
-                      <div className="w-8 h-1 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full"></div>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-semibold text-sm">2</div>
-                      <span className="ml-2 text-sm font-medium text-gray-500">Your Message</span>
-                    </div>
-                    <div className="w-16 h-1 bg-gray-200 rounded-full"></div>
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 font-semibold text-sm">3</div>
-                      <span className="ml-2 text-sm font-medium text-gray-500">Get Response</span>
-                    </div>
-                  </div>
-                </div>
-              
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Contact Information Section */}
                 <div className="mb-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center mr-3 shadow-lg">
-                      <User className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900">Contact Information</h3>
-                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Information</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
-                        <User className="h-4 w-4 mr-2 text-blue-500" />
+                        <User className="h-4 w-4 mr-2 text-amber-500" />
                         Full Name *
                       </label>
                       <input
@@ -386,18 +354,13 @@ export function ContactPage() {
                 </div>
                 
                 {/* Message Details Section */}
-                <div className="mt-10 pt-8 border-t border-gradient-to-r from-amber-200 via-gray-200 to-green-200">
-                  <div className="flex items-center mb-6">
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3 shadow-lg">
-                      <FileText className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900">Message Details</h3>
-                  </div>
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Message Details</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
-                        <FileText className="h-4 w-4 mr-2 text-blue-500" />
+                        <FileText className="h-4 w-4 mr-2 text-amber-500" />
                         Subject *
                       </label>
                       <div className="relative">
@@ -418,7 +381,7 @@ export function ContactPage() {
                           <option value="other">Other</option>
                         </select>
                         <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
                         </div>
                       </div>
                       {errors.subject && <p className="mt-1 text-sm text-red-600">{errors.subject}</p>}
@@ -502,15 +465,14 @@ export function ContactPage() {
                     </p>
                   </div>
                 </div>
-                </form>
-              </div>
+              </form>
             </div>
             
             {/* Office Information */}
             <div className="space-y-8">
               {/* Office Details */}
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Office</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-6">Our Office</h2>
                 
                 {offices.map((office, index) => (
                   <div key={index} className="space-y-6">
@@ -563,7 +525,7 @@ export function ContactPage() {
                     </div>
                     
                     <div className="pt-6 border-t">
-                      <button className="w-full bg-green-100 text-green-700 py-3 rounded-lg font-semibold hover:bg-blue-200 transition-colors">
+                      <button className="w-full bg-green-100 text-green-700 py-3 rounded-lg font-semibold hover:bg-amber-200 transition-colors">
                         Get Directions
                       </button>
                     </div>
@@ -573,7 +535,7 @@ export function ContactPage() {
               
               {/* Service Areas */}
               <div className="bg-white rounded-2xl shadow-lg p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Service Areas</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-6">Service Areas</h2>
                 
                 <div className="space-y-4">
                   <div>

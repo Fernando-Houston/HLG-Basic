@@ -97,7 +97,7 @@ export function PrivacyPolicyPage() {
                 <FileText className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">Privacy Policy</h1>
+                <h1 className="text-xl font-bold text-gray-900">Privacy Policy</h1>
                 <p className="text-gray-600">Last updated: January 2025</p>
               </div>
             </div>
@@ -119,7 +119,7 @@ export function PrivacyPolicyPage() {
                   <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
                     <IconComponent className="h-6 w-6 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900">{section.title}</h2>
+                  <h2 className="text-xl font-bold text-gray-900">{section.title}</h2>
                 </div>
                 <div className="space-y-4">
                   {section.content.map((item, itemIndex) => (
@@ -139,7 +139,7 @@ export function PrivacyPolicyPage() {
               <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
                 <AlertCircle className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Your Rights</h2>
+              <h2 className="text-xl font-bold text-gray-900">Your Rights</h2>
             </div>
             <p className="text-gray-700 mb-4">
               You have the following rights regarding your personal information:
@@ -160,7 +160,7 @@ export function PrivacyPolicyPage() {
               <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mr-4">
                 <Clock className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Cookies and Tracking</h2>
+              <h2 className="text-xl font-bold text-gray-900">Cookies and Tracking</h2>
             </div>
             <p className="text-gray-700 mb-4">
               We use cookies and similar tracking technologies to enhance your experience on our website. 
@@ -196,7 +196,7 @@ export function PrivacyPolicyPage() {
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
                 <Mail className="h-6 w-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold">Contact Us</h2>
+              <h2 className="text-xl font-bold">Contact Us</h2>
             </div>
             <p className="mb-4">
               If you have questions about this Privacy Policy or how we handle your information, 
@@ -222,8 +222,8 @@ export function PrivacyPolicyPage() {
           </div>
 
           {/* Updates Notice */}
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-            <p className="text-blue-800 text-sm">
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+            <p className="text-amber-800 text-sm">
               <strong>Note:</strong> We may update this Privacy Policy from time to time. 
               We will notify you of any changes by posting the new Privacy Policy on this page 
               and updating the "Last updated" date.

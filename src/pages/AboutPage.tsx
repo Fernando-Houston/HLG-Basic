@@ -151,7 +151,7 @@ export function AboutPage() {
                   <div className="w-16 h-16 mx-auto mb-4 bg-green-600 rounded-full flex items-center justify-center">
                     <IconComponent className="h-8 w-8 text-white" />
                   </div>
-                  <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-2xl lg:text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
                   <div className="text-lg font-semibold text-gray-800 mb-1">{stat.label}</div>
                   <div className="text-sm text-gray-600">{stat.description}</div>
                 </div>
@@ -299,7 +299,7 @@ export function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-green-500"></div>
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-amber-500 to-green-500"></div>
               
               <div className="space-y-8">
                 {timeline.map((item, index) => (

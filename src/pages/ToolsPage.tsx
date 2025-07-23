@@ -142,7 +142,7 @@ export function ToolsPage() {
                   </div>
                   
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{tool.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">{tool.title}</h3>
                     <p className="text-gray-600 mb-6">{tool.description}</p>
                     
                     <ul className="space-y-2 mb-8">
@@ -258,7 +258,7 @@ export function ToolsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl"></div>
                 <div className="absolute bottom-6 left-6 text-white">
                   <p className="text-sm opacity-90">Serving Greater Houston Area</p>
-                  <p className="text-2xl font-bold">Harris • Fort Bend • Montgomery</p>
+                  <p className="text-xl font-bold">Harris • Fort Bend • Montgomery</p>
                 </div>
               </div>
             </div>

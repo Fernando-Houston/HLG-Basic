@@ -289,7 +289,7 @@ export function InvestInLandPage() {
                 <div className="p-8">
                   <div className="flex justify-between items-start mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900">{level.type}</h3>
+                      <h3 className="text-xl font-bold text-gray-900">{level.type}</h3>
                       {index < 2 && (
                         <span className="inline-block bg-accent-500 text-gray-900 px-2 py-1 rounded-full text-xs font-bold mt-1 shadow-sm">
                           {index === 0 ? 'HIGHEST ROI' : 'LOWER RISK'}
@@ -298,7 +298,7 @@ export function InvestInLandPage() {
                     </div>
                     <div className="text-right">
                       <div className="text-sm text-gray-600">Minimum Investment</div>
-                      <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-700">{level.minimum}</div>
+                      <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-700">{level.minimum}</div>
                     </div>
                   </div>
                   
@@ -340,7 +340,7 @@ export function InvestInLandPage() {
                   <div className="flex items-center mb-4">
                     {React.createElement(selectedInvestmentType.icon, { className: "h-10 w-10 mr-4" })}
                     <div>
-                      <h3 className="text-3xl font-bold">{selectedInvestmentType.type}</h3>
+                      <h3 className="text-xl font-bold">{selectedInvestmentType.type}</h3>
                       <p className="text-green-100 text-lg">Minimum Investment: {selectedInvestmentType.minimum}</p>
                     </div>
                   </div>
@@ -390,9 +390,9 @@ export function InvestInLandPage() {
                     </h5>
                     <p className="text-gray-700">{selectedInvestmentType.expectedReturns}</p>
                   </div>
-                  <div className="bg-blue-50 border border-blue-200 p-6 rounded-xl">
+                  <div className="bg-amber-50 border border-amber-200 p-6 rounded-xl">
                     <h5 className="font-semibold text-gray-900 mb-2 flex items-center">
-                      <Shield className="h-5 w-5 mr-2 text-blue-600" />
+                      <Shield className="h-5 w-5 mr-2 text-green-600" />
                       Risk Profile
                     </h5>
                     <p className="text-gray-700">{selectedInvestmentType.riskProfile}</p>
@@ -496,7 +496,7 @@ export function InvestInLandPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
-                        <User className="h-4 w-4 mr-2 text-blue-500" />
+                        <User className="h-4 w-4 mr-2 text-amber-500" />
                         Full Name *
                       </label>
                       <input

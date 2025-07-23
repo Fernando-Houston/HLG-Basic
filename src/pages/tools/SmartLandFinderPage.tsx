@@ -125,7 +125,7 @@ export function SmartLandFinderPage() {
           {/* Criteria Form */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-2xl shadow-lg p-8 sticky top-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Search Criteria</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-6">Search Criteria</h2>
               
               <div className="space-y-6">
                 <div>
@@ -320,7 +320,7 @@ export function SmartLandFinderPage() {
                 {/* Market Summary */}
                 <div className="bg-white rounded-2xl shadow-lg p-8">
                   <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-bold text-gray-900">AI Analysis Results</h2>
+                    <h2 className="text-xl font-bold text-gray-900">AI Analysis Results</h2>
                     <div className="text-sm text-gray-500">
                       Analysis Date: {new Date(results.generatedAt).toLocaleDateString()}
                     </div>
@@ -328,30 +328,30 @@ export function SmartLandFinderPage() {
                   
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                     <div className="text-center p-4 bg-purple-50 rounded-lg">
-                      <div className="text-3xl font-bold text-purple-600 mb-2">{results.opportunities.length}</div>
+                      <div className="text-xl font-bold text-purple-600 mb-2">{results.opportunities.length}</div>
                       <div className="text-sm text-purple-800">Opportunities Found</div>
                     </div>
                     <div className="text-center p-4 bg-green-50 rounded-lg">
-                      <div className="text-3xl font-bold text-green-600 mb-2">{Math.round(results.opportunities.reduce((sum, opp) => sum + parseInt(opp.projectedROI), 0) / results.opportunities.length)}%</div>
+                      <div className="text-xl font-bold text-green-600 mb-2">{Math.round(results.opportunities.reduce((sum, opp) => sum + parseInt(opp.projectedROI), 0) / results.opportunities.length)}%</div>
                       <div className="text-sm text-green-800">Average ROI</div>
                     </div>
-                    <div className="text-center p-4 bg-blue-50 rounded-lg">
-                      <div className="text-3xl font-bold text-green-600 mb-2">{results.marketAnalysis.overallTrend}</div>
-                      <div className="text-sm text-blue-800">Market Trend</div>
+                    <div className="text-center p-4 bg-amber-50 rounded-lg">
+                      <div className="text-xl font-bold text-green-600 mb-2">{results.marketAnalysis.overallTrend}</div>
+                      <div className="text-sm text-amber-800">Market Trend</div>
                     </div>
                     <div className="text-center p-4 bg-yellow-50 rounded-lg">
-                      <div className="text-3xl font-bold text-yellow-600 mb-2">Favorable</div>
+                      <div className="text-xl font-bold text-yellow-600 mb-2">Favorable</div>
                       <div className="text-sm text-yellow-800">Buying Conditions</div>
                     </div>
                   </div>
                   
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                    <h3 className="text-lg font-semibold text-blue-900 mb-4">AI Recommendations</h3>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-amber-900 mb-4">AI Recommendations</h3>
                     <ul className="space-y-2">
                       {results.recommendations.map((rec: string, index: number) => (
                         <li key={index} className="flex items-start">
                           <div className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                          <span className="text-blue-800">{rec}</span>
+                          <span className="text-amber-800">{rec}</span>
                         </li>
                       ))}
                     </ul>
@@ -360,7 +360,7 @@ export function SmartLandFinderPage() {
                 
                 {/* Top Opportunities */}
                 <div className="space-y-6">
-                  <h2 className="text-2xl font-bold text-gray-900">Top Opportunities</h2>
+                  <h2 className="text-xl font-bold text-gray-900">Top Opportunities</h2>
                   
                   {results.opportunities.map((opportunity, index: number) => (
                     <div key={opportunity.id} className="bg-white rounded-2xl shadow-lg p-8">
@@ -383,7 +383,7 @@ export function SmartLandFinderPage() {
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="text-3xl font-bold text-green-600 mb-1">
+                          <div className="text-xl font-bold text-green-600 mb-1">
                             {opportunity.projectedROI}
                           </div>
                           <div className="text-sm text-gray-600">Projected ROI</div>

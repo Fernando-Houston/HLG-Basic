@@ -266,7 +266,7 @@ export function FindDevelopmentSitesPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-2xl font-bold">{dev.type}</h3>
+                    <h3 className="text-xl font-bold">{dev.type}</h3>
                     <p className="text-sm opacity-90">Sweet spot: {dev.sweetSpot}</p>
                   </div>
                 </div>
@@ -304,7 +304,7 @@ export function FindDevelopmentSitesPage() {
                 <div className="absolute bottom-6 left-6 text-white">
                   <div className="flex items-center mb-2">
                     {React.createElement(selectedDevelopmentType.icon, { className: "h-8 w-8 mr-3" })}
-                    <h3 className="text-3xl font-bold">{selectedDevelopmentType.type}</h3>
+                    <h3 className="text-xl font-bold">{selectedDevelopmentType.type}</h3>
                   </div>
                   <p className="text-lg opacity-90">Sweet spot: {selectedDevelopmentType.sweetSpot}</p>
                 </div>
@@ -503,7 +503,7 @@ export function FindDevelopmentSitesPage() {
                     
                     <div className="group">
                       <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
-                        <Target className="h-4 w-4 mr-2 text-blue-500" />
+                        <Target className="h-4 w-4 mr-2 text-amber-500" />
                         Minimum Acreage
                       </label>
                       <div className="relative">
@@ -605,7 +605,7 @@ export function FindDevelopmentSitesPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
-                        <User className="h-4 w-4 mr-2 text-blue-500" />
+                        <User className="h-4 w-4 mr-2 text-amber-500" />
                         Your Name
                       </label>
                       <input
@@ -722,7 +722,7 @@ export function FindDevelopmentSitesPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">
               Trusted by 500+ Developers
             </h2>
           </div>

@@ -214,7 +214,7 @@ export function SellYourLandPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Traditional Sale */}
               <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-red-600 mb-6 text-center">Traditional Sale</h3>
+                <h3 className="text-xl font-bold text-red-600 mb-6 text-center">Traditional Sale</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-2 border-b">
                     <span className="text-gray-700">Sale Price</span>
@@ -248,7 +248,7 @@ export function SellYourLandPage() {
 
               {/* Cash Sale */}
               <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg border-2 border-green-200">
-                <h3 className="text-2xl font-bold text-green-600 mb-6 text-center">Cash Sale with Us</h3>
+                <h3 className="text-xl font-bold text-green-600 mb-6 text-center">Cash Sale with Us</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-2 border-b">
                     <span className="text-gray-700">Cash Offer</span>
@@ -360,7 +360,7 @@ export function SellYourLandPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
-                        <Home className="h-4 w-4 mr-2 text-blue-500" />
+                        <Home className="h-4 w-4 mr-2 text-amber-500" />
                         Property Type *
                       </label>
                       <div className="relative">
@@ -377,7 +377,7 @@ export function SellYourLandPage() {
                           ))}
                         </select>
                         <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                          <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
                         </div>
                       </div>
                     </div>
@@ -457,7 +457,7 @@ export function SellYourLandPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <label className="flex items-center text-sm font-medium text-gray-700 mb-3">
-                        <User className="h-4 w-4 mr-2 text-blue-500" />
+                        <User className="h-4 w-4 mr-2 text-amber-500" />
                         Full Name *
                       </label>
                       <input
@@ -577,7 +577,7 @@ export function SellYourLandPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">
               Prefer to Talk? Call Us Now
             </h2>
             <p className="text-xl text-gray-600">
