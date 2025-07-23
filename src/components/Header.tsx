@@ -151,7 +151,7 @@ export function Header() {
               to="/contact"
               className="bg-gradient-to-r from-accent-600 to-accent-700 text-white px-4 xl:px-6 py-2 rounded-lg font-semibold hover:from-accent-700 hover:to-accent-800 hover:shadow-lg hover:shadow-accent-600/30 transition-all"
             >
-              <span className="text-white font-bold bg-green-600 px-2 py-1 rounded mr-1">Get Cash</span> Offer
+              <span className="text-green-200 font-bold drop-shadow-lg">Get Cash</span> Offer
             </Link>
           </div>
 
@@ -299,7 +299,7 @@ export function Header() {
                   onClick={handleMobileLinkClick}
                   className="block w-full bg-gradient-to-r from-accent-600 to-accent-700 text-white px-6 py-3 rounded-lg font-semibold text-center hover:from-accent-700 hover:to-accent-800 transition-all"
                 >
-                  <span className="text-white font-bold bg-green-600 px-2 py-1 rounded mr-1">Get Cash</span> Offer
+                  <span className="text-green-200 font-bold drop-shadow-lg">Get Cash</span> Offer
                 </Link>
               </div>
             </div>
