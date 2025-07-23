@@ -32,25 +32,25 @@ export function AboutPage() {
 
   const team = [
     {
-      name: "Stephen Garza",
+      name: "S. Garza",
       title: "Founder & CEO",
       experience: "20+ years in Houston real estate",
-      image: "/images/stephen-garza.jpg",
-      bio: "Stephen founded Houston Land Guy with a vision to streamline land transactions in the Greater Houston area. His deep market knowledge and developer relationships have facilitated over $483M in transactions."
+      image: "/images/s-garza.jpg",
+      bio: "S. Garza founded Houston Land Guy with a vision to streamline land transactions in the Greater Houston area. His deep market knowledge and developer relationships have facilitated over $483M in transactions."
     },
     {
-      name: "Stephen Garza",
+      name: "Technology Leader",
       title: "Chief Technology Officer",
       experience: "15+ years in real estate technology",
-      image: "/images/stephen-garza.jpg",
-      bio: "Stephen leads our technology innovation team, developing cutting-edge tools for land analysis and transaction management. His expertise in PropTech has revolutionized how we evaluate opportunities."
+      image: "/images/cto-photo.jpg",
+      bio: "Our CTO leads our technology innovation team, developing cutting-edge tools for land analysis and transaction management. His expertise in PropTech has revolutionized how we evaluate opportunities."
     },
     {
-      name: "Stephen Garza",
+      name: "S. Garza",
       title: "Chief Financial Officer",
       experience: "18+ years in real estate finance",
-      image: "/images/stephen-garza.jpg",
-      bio: "Stephen oversees all financial operations and investment strategies at Houston Land Guy. His analytical approach to market valuation has helped investors achieve consistent returns exceeding industry standards."
+      image: "/images/s-garza.jpg",
+      bio: "S. Garza oversees all financial operations and investment strategies at Houston Land Guy. His analytical approach to market valuation has helped investors achieve consistent returns exceeding industry standards."
     }
   ];
 
