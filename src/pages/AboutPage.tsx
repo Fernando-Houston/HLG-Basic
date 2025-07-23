@@ -113,22 +113,30 @@ export function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-600 to-green-700 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white py-20">
+        <div className="absolute inset-0 bg-black/30"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30"
+          className="absolute inset-0 bg-cover bg-center mix-blend-soft-light opacity-60"
           style={{ backgroundImage: 'url(/images/houston-skyline.jpg)' }}
         ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-green-600/50 to-green-800/70"></div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              About
-              <span className="block text-green-200">Houston Land Guy</span>
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 drop-shadow-2xl">
+              <span className="text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">About</span>
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-accent-400 drop-shadow-[0_4px_8px_rgba(0,0,0,0.9)] font-black">
+                Houston Land Guy
+              </span>
             </h1>
-            <p className="text-xl lg:text-2xl mb-8">
+            <p className="text-xl lg:text-2xl mb-8 text-white font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
               15+ years of expertise • $483M+ in transactions • Your trusted Houston land partner
             </p>
           </div>
+          
+          {/* Floating elements for visual interest */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-accent-500/10 rounded-full blur-xl animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
+          <div className="absolute bottom-32 right-20 w-16 h-16 bg-green-400/10 rounded-full blur-lg animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
+          <div className="absolute top-1/2 right-10 w-12 h-12 bg-accent-400/10 rounded-full blur-md animate-bounce" style={{ animationDelay: '2s', animationDuration: '5s' }}></div>
         </div>
       </section>
 
